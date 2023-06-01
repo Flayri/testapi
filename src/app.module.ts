@@ -11,6 +11,11 @@ import { User } from './users/users.model';
 import { Role } from './roles/roles.model';
 import { UserRoles } from './roles/user-roles.model';
 import { SignModule } from './sign/sign.module';
+import { ImagesModule } from './images/images.module';
+import { FilesModule } from './files/files.module';
+import { CommentsModule } from './comments/comments.module';
+import { Images } from './images/images.model';
+import { Comment } from './comments/comments.model';
 
 
 
@@ -27,12 +32,15 @@ import { SignModule } from './sign/sign.module';
     username: 'postgres',
     password: '123456',
     database: 'testapi',
-    models: [User, Role, UserRoles,],
+    models: [User, Role, UserRoles, Images, Comment],
     autoLoadModels:true,
   }),
   UsersModule,
   RolesModule,
-  SignModule,],
+  SignModule,
+  ImagesModule,
+  FilesModule,
+  CommentsModule,],
   controllers: [AppController,],
   providers: [AppService, ],
 })

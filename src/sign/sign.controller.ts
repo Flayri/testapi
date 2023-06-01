@@ -2,7 +2,7 @@ import { Body, Controller, Post } from '@nestjs/common';
 import { SignService } from './sign.service';
 import { SignUserDtoIn } from 'src/users/dto/SignUserDtoIn';
 
-@Controller('account')
+@Controller('/api/account')
 export class SignController {
 
     constructor(private signService: SignService ){}

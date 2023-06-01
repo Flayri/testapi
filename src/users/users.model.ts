@@ -1,4 +1,6 @@
 import { Model, Column, DataType, Table, BelongsToMany, HasMany } from "sequelize-typescript";
+import { Comment } from "src/comments/comments.model";
+import { Images } from "src/images/images.model";
 import { Role } from "src/roles/roles.model";
 import { UserRoles } from "src/roles/user-roles.model";
 
@@ -20,4 +22,10 @@ export class User extends Model<User,UserCreationAttrs> {
 
     @BelongsToMany(()=>Role,()=>UserRoles)
     roles:Role[];
+
+    // @HasMany(()=>Comment)
+    // comment:Comment[]
+
+    // @HasMany(()=>Images)
+    // images:Images[]
 }
