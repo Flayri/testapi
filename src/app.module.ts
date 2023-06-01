@@ -10,6 +10,8 @@ import { RolesModule } from './roles/roles.module';
 import { User } from './users/users.model';
 import { Role } from './roles/roles.model';
 import { UserRoles } from './roles/user-roles.model';
+import { SignModule } from './sign/sign.module';
+
 
 
 
@@ -28,9 +30,10 @@ import { UserRoles } from './roles/user-roles.model';
     models: [User, Role, UserRoles,],
     autoLoadModels:true,
   }),
-    UsersModule,
-    RolesModule],
-  controllers: [AppController, UsersController],
-  providers: [AppService, UsersService],
+  UsersModule,
+  RolesModule,
+  SignModule,],
+  controllers: [AppController,],
+  providers: [AppService, ],
 })
 export class AppModule {}
