@@ -7,6 +7,7 @@ interface ImagesCreationAttrs{
     date:number;
     lat:number;
     lng:number;
+    url:string;
 }
 @Table({tableName:'images',updatedAt: false})
 export class Images extends Model<Images,ImagesCreationAttrs> {
@@ -14,7 +15,7 @@ export class Images extends Model<Images,ImagesCreationAttrs> {
     @Column({type: DataType.INTEGER, unique:true, autoIncrement:true, primaryKey:true})
     id:number;
 
-    @Column({type: DataType.STRING, unique:true, allowNull:false})
+    @Column({type: DataType.STRING(20000), allowNull:false})
     base64Images:string
 
     @Column({type: DataType.STRING})

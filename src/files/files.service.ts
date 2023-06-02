@@ -21,7 +21,7 @@ export class FilesService {
     }
 
     async todase64(file): Promise<string>{
-        const img = fs.readFileSync(file);
+        //const img = fs.readFileSync(file);
         const base64String = Buffer.from(file).toString('base64');
         //const result = fs.readFileSync(file, {encoding: 'base64'})
         const withPrefix='data:image/png;base64,' + base64String;

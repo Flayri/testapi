@@ -5,7 +5,7 @@ interface CommentCreationAttrs {
     text:string
 }
 
-@Table({tableName:'coments', createdAt:false})
+@Table({tableName:'coments', updatedAt: false})
 export class Comment extends Model<Comment, CommentCreationAttrs>{
 
     @Column({type: DataType.INTEGER, unique:true, autoIncrement:true, primaryKey:true})

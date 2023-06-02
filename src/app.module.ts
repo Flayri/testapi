@@ -16,14 +16,16 @@ import { FilesModule } from './files/files.module';
 import { CommentsModule } from './comments/comments.module';
 import { Images } from './images/images.model';
 import { Comment } from './comments/comments.model';
-
-
-
+import { ServeStaticModule } from "@nestjs/serve-static";
+import * as path from 'path'
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       envFilePath:`${process.env.NODE_ENV}.env`
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: path.resolve(__dirname, 'static'),
     }),
     SequelizeModule.forRoot({
     dialect: 'postgres',

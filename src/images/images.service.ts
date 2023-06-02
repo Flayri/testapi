@@ -11,7 +11,9 @@ export class ImagesService {
 
 
     async create(dto:ImageDtoIn){
-        const images = await this.imagesRepository.create(dto)
+        const url ='data:image/png;base64,' +  dto.base64Images
+        const images = await this.imagesRepository.create({...dto,url:url})
+        return images
     }
 
     async remove(id: number) {
