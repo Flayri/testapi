@@ -15,13 +15,13 @@ export class ImagesController {
         return this.imagesService.create(imagesdtoin);
     }
 
-    @UseGuards(JwtAuthGuard)
+    
     @Get()
     findAll() {
         return this.imagesService.findAll();
     }
 
-    @UseGuards(JwtAuthGuard)
+    //@UseGuards(JwtAuthGuard)
     @Get(':id')
     findOne(@Param('id') id: string) {
         return this.imagesService.findOne(+id);

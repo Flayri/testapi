@@ -14,7 +14,7 @@ import { Comment } from 'src/comments/comments.model';
   providers: [ImagesService],
   controllers: [ImagesController],
   imports:[ SequelizeModule.forFeature([Images,User,Comment]),
-  RolesModule,forwardRef(()=>SignModule),FilesModule],
+  RolesModule,forwardRef(()=>SignModule),FilesModule,],
   exports:[ImagesService,]
 })
 export class ImagesModule {}

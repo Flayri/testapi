@@ -22,4 +22,9 @@ export class CommentsService {
         const comment = await this.commentRepository.findAll({where:{imagesId}})
         return comment; 
     }
+
+    async findAlli(){
+        const comment = await this.commentRepository.findAll({attributes: ['id', 'text', 'imagesId', 'createdAt'],order:['id']})
+        return comment; 
+    }
 }
